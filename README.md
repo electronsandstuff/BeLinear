@@ -1,2 +1,2 @@
 # BeLinear
-This library contains methods to work with linear beam optics.
+Performant numerical solutions of the paraxial ray equation
