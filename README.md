@@ -43,14 +43,14 @@ Note: this will start the particles with no longitudinal velocity and so we requ
 
 ```python
 # Calculate the linear transport matrix
-M = belinear.get_M(Ez, Bz, delta_z. gamma_initial=2)
+M = belinear.get_M(Ez, Bz, delta_z, gamma_initial=2)
 ```
 
 BeLinear also supports multiple ODE solvers.  We have been using the default option which is the midpoint method.  This is expected to the best option for most cases, however you may change which solver is used with the optional argument.
 
 ```python
 # Calculate the linear transport matrix
-M = belinear.get_M(Ez, Bz, delta_z. method='<method name>')
+M = belinear.get_M(Ez, Bz, delta_z, method='<method name>')
 ```
 
 The solvers supported by BeLinear are:
@@ -63,7 +63,7 @@ Belinear also support cummulative output of the transfer matrices as one big num
 
 ```python
 # Calculate the linear transport matrix with cumulative output
-M_cum = belinear.get_M_cum(Ez, Bz, delta_z)
+M_cum = belinear.get_cum_M(Ez, Bz, delta_z)
 ```
 
 Plotting the matrix elements against position gives the following plot.
