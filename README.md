@@ -26,8 +26,8 @@ import numpy as np
 
 # Compute the fields on axis (replace with your code)
 z_raw  = np.linspace(0, 0.5, 1000)
-Ez_raw = (z<0.005)*10e3/5e-3
-Bz_raw = np.bitwise_and(z > 0.1, z < 0.2) * 6e-3
+Ez_raw = (z_raw<0.005)*10e3/5e-3
+Bz_raw = np.bitwise_and(z_raw > 0.1, z_raw < 0.2) * 6e-3
 
 # Interpolate to the points used in ODE solving
 z       = np.linspace(z_raw.min(), z_raw.max(), 10000)
