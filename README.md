@@ -1,13 +1,26 @@
 # BeLinear
 Performant numerical solutions of the paraxial ray equation.
 
-## Installation
+## Installation and Testing
 
 Please install the package using pip.
 
 ```
 pip install <unzipped belinear directory>
 ```
+
+Once setup the package can be tested using python's unittest framework.
+
+```
+(mainenv) [cmpierce@turing ~]$ python -m unittest belinear.tests
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.136s
+
+OK
+```
+
+You should see an indication that all tests pass successfully.
 
 ## Quickstart Guide
 

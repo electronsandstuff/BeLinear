@@ -107,7 +107,7 @@ def get_dM_midpoint(Ez, Bz, delta_z, gamma_initial=1):
 def get_dM_constant_field(Ez, Bz, delta_z, gamma_initial=1):
     # Compute the larmor frequency
     b = Bz[:-1]/(2*mc2)*c
-    e = Ez/mc2
+    gamma_prime = Ez/mc2
 
     # Calculate longitudinal energy/velocity along the beamline
     # Use fixed spacing for performance reasons

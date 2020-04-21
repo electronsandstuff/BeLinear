@@ -31,6 +31,7 @@ setuptools.setup(
         author='Christopher M. Pierce',
         author_email='contact@chris-pierce.com',
         python_requires='>=3.1',
+        packages=setuptools.find_packages(),
         long_description=long_description,
         long_description_content_type="text/markdown",
         install_requires = [
@@ -38,7 +39,8 @@ setuptools.setup(
             'matprod',
             'scipy'
         ],
-        packages=['belinear'],
+        package_data={'': ['tests/test_data.pickle']},
+        include_package_data=True,
         license = 'GNU Affero General Public License v3 or later (AGPLv3+)',
         classifiers = [
             "Programming Language :: Python :: 3",
