@@ -4,18 +4,18 @@
 BeLinear - Performant numerical solutions of the paraxial ray equation
 Copyright (C) 2020 Christopher M. Pierce (contact@chris-pierce.com)
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
+This program is free software; you can redistribute it and/or
+modify it under the terms of version 3 of the GNU Lesser General Public
+License as published by the Free Software Foundation.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
 
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+You should have received a copy of the GNU Lesser General Public License
+along with this program; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 '''
 
 import setuptools
@@ -30,7 +30,7 @@ setuptools.setup(
         description='Performant numerical solutions of the paraxial ray equation',
         author='Christopher M. Pierce',
         author_email='contact@chris-pierce.com',
-        python_requires='>=3.1',
+        python_requires='>=3.6',
         packages=setuptools.find_packages(),
         long_description=long_description,
         long_description_content_type="text/markdown",
@@ -41,10 +41,10 @@ setuptools.setup(
         ],
         package_data={'': ['tests/test_data.pickle']},
         include_package_data=True,
-        license = 'GNU Affero General Public License v3 or later (AGPLv3+)',
+        license = "GNU Lesser General Public License v3 (LGPLv3)",
         classifiers = [
             "Programming Language :: Python :: 3",
-            "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+            "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
             "Development Status :: 4 - Beta",
             "Operating System :: OS Independent",
         ],
