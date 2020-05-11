@@ -155,13 +155,26 @@ def get_dM(Ez, Bz, delta_z, gamma_initial=1, method='midpoint'):
     # Return it
     return dM
 
-def get_M(Ez, Bz, delta_z, gamma_initial=1, method='midpoint'):
-    # Return the product of the matrices dM
-    return matprod.lprod(get_dM(Ez, Bz, delta_z, gamma_initial, method))
+################################################################################
+# High level interface
+################################################################################
+def get_M(z, Ez, Bz, h, gamma_initial=1, method='midpoint'):
+    # Interpolate Ez and Bz onto the requested step size
+    dz  = np.arange(min(z), max(z), h)
+    dEz = np.interp(dz, z, Ez)
+    dBz = np.interp(dz, z, Bz)
 
-def get_cum_M(Ez, Bz, delta_z, gamma_initial=1, method='midpoint'):
+    # Return the product of the matrices dM
+    return matprod.lprod(get_dM(dEz, dBz, h, gamma_initial, method))
+
+def get_cum_M(z, Ez, Bz, h, gamma_initial=1, method='midpoint'):
+    # Interpolate Ez and Bz onto the requested step size
+    dz  = np.arange(min(z), max(z), h)
+    dEz = np.interp(dz, z, Ez)
+    dBz = np.interp(dz, z, Bz)
+
     # Return the cumulative product of the matrices dM
-    return matprod.cumlprod(get_dM(Ez, Bz, delta_z, gamma_initial, method))
+    return matprod.cumlprod(get_dM(dEz, dBz, h, gamma_initial, method))
 
 ################################################################################
 # Stuff for Voltage Scana Analysis Compatibility
