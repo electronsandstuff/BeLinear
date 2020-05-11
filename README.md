@@ -239,24 +239,3 @@ The same solver function as "get_M" except that it will output the transfer matr
 * M_cum: array_like
       The transfer matrices in phase space ([x, px]) output at every step from the solver.  A (2,2,n)
       numpy array.
-
-##### get_B(voltages, anode_map_filename, beamline_length, N=10000)
-
-Computes the matrix "B" used in data analysis for the voltage scan method of calculating MTE.  Will likely be deprecated soon in favor of keeping this more application specific code in standalone voltage scan libraries
-
-###### Parameters
-
-* voltages: array_like
-      The list of voltages in the scan
-* anode_map_filename: str
-      The anode fieldmap normalized so that the cathode is at 9 kV (an unfortunate legacy standard).
-      The file should be tab delimited with the columns z and Ez.
-* beamline_length: float
-      The location of the final screen in meters.
-* N: int
-      The number of steps for the solver to take.
-
-###### Returns
-
-* B: array_like
-      The matrix "B" for the voltage scan.  It's rows are [M11^2(V), M12^2(V)] for each voltage in the scan.

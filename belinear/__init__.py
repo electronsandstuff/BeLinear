@@ -175,29 +175,3 @@ def get_cum_M(z, Ez, Bz, h, gamma_initial=1, method='midpoint'):
 
     # Return the cumulative product of the matrices dM
     return matprod.cumlprod(get_dM(dEz, dBz, h, gamma_initial, method))
-
-################################################################################
-# Stuff for Voltage Scana Analysis Compatibility
-################################################################################
-def get_B_row(E, B, delta_z):
-    # Get m
-    M = get_M(E, B, delta_z)
-
-    # Return the array
-    return np.array([M[0,0]**2, M[0,1]**2])
-
-def get_B(voltages, anode_map_filename, beamline_length, N=10000):
-    # Load the field-maps
-    anode_pos = np.genfromtxt(anode_map_filename)[1:][:,0]
-    anode_fld = np.genfromtxt(anode_map_filename)[1:][:,1]/9000.0
-
-    # Create the positions we will evaluate the transfer matrices at
-    z = np.linspace(0.0, beamline_length, N)
-    z = (z[:-1] + z[1:])/2 # Change to the centers of the boxes
-    delta_z = z[1]-z[0]
-
-    # Get the E field and B field at each location
-    E = np.interp(z, anode_pos, anode_fld, left=0.0, right=0.0)
-    B = np.array([0.0 for _ in E])
-
-    return np.array([get_B_row(E*v, B, delta_z) for v in voltages])
