@@ -1,6 +1,8 @@
 # BeLinear
 Performant numerical solutions of the paraxial ray equation.
 
+[![Build Status](https://travis-ci.com/electronsandstuff/BeLinear.svg?branch=master)](https://travis-ci.com/electronsandstuff/BeLinear)
+
 ## Installation and Testing
 
 Please install the package using pip.
