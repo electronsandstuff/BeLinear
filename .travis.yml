@@ -13,7 +13,7 @@ before_install:
         export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
         ln -s /c/Python38/python.exe /c/Python38/python3.exe
     fi
-  - conda remove numpy
+  - apt -y remove python3-numpy
 
 script:
   - python3 setup.py install
