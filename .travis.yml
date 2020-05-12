@@ -14,6 +14,10 @@ before_install:
         ln -s /c/Python38/python.exe /c/Python38/python3.exe
     fi
   - pip uninstall numpy -y
+  - |
+    if [[ "$TRAVIS_OS_NAME" = windows ]]; then
+        pip install numpy
+    fi
 
 script:
   - python3 setup.py install
