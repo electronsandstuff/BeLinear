@@ -16,7 +16,7 @@ before_install:
   - pip uninstall numpy -y
   - |
     if [[ "$TRAVIS_OS_NAME" = windows ]]; then
-        pip install numpy
+        pip install numpy scipy matprod
     fi
 
 script:
