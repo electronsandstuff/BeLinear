@@ -30,7 +30,7 @@ setuptools.setup(
         description='Performant numerical solutions of the paraxial ray equation',
         author='Christopher M. Pierce',
         author_email='contact@chris-pierce.com',
-        python_requires='>=3.6',
+        python_requires='>=3.5',
         packages=setuptools.find_packages(),
         long_description=long_description,
         long_description_content_type="text/markdown",
