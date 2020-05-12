@@ -14,7 +14,18 @@ before_install:
         ln -s /c/Python38/python.exe /c/Python38/python3.exe
     fi
   - pip uninstall numpy -y
-  - pip install numpy scipy matprod
+  - |
+    if [[ "$TRAVIS_OS_NAME" = windows ]]; then
+        pip install numpy scipy matprod
+    fi
+  - |
+    if [[ "$TRAVIS_OS_NAME" = linux ]]; then
+        pip install numpy scipy matprod
+    fi
+  - |
+    if [[ "$TRAVIS_OS_NAME" = osx ]]; then
+        pip3 install numpy scipy matprod
+    fi
 
 script:
   - python3 setup.py install
