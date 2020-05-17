@@ -26,7 +26,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
         name='belinear',
-        version='1.0',
+        version='1.1',
         description='Performant numerical solutions of the paraxial ray equation',
         author='Christopher M. Pierce',
         author_email='contact@chris-pierce.com',

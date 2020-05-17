@@ -28,7 +28,7 @@ You should see an indication that all tests pass successfully.
 
 To calculate linear transfer matrices, you're going to need fieldmaps for all of the elements in your system.  We're going to pick up the script after you have already calculated the fields (Ez and Bz) along the axis of the beamline.  The fields and positions must be in SI units: MV/m, Tesla, and meters.  I'll be using the following fields as an examples.
 
-![Fields](assets/fields.png)
+![Fields](https://raw.githubusercontent.com/electronsandstuff/BeLinear/master/assets/fields.png)
 
 Once we have the fields, we can make the call to the solver and get the transfer matrix.  The transfer matrix will be returned in [x, px] phase space as opposed to [x, x'] trace space which is common in accelerator physics.  This is done because the angle x' becomes ill-determined when particles have zero longitudinal momentum as is the case at the start of integration in guns.
 
@@ -106,7 +106,7 @@ plt.ylabel("$M_{22}$", c="C1")
 
 Plotting the matrix elements against position gives the following plot.
 
-![Matrix elements](assets/matrix_elements.png)
+![Matrix elements](https://raw.githubusercontent.com/electronsandstuff/BeLinear/master/assets/matrix_elements.png)
 
 This is also useful for calculating beam size along the system as in the following example.
 
@@ -143,7 +143,7 @@ plt.ylabel("$\sigma_x$ (um)")
 
 This should output the following plot of beam size.
 
-![Spot size](assets/beam_size.png)
+![Spot size](https://raw.githubusercontent.com/electronsandstuff/BeLinear/master/assets/beam_size.png)
 
 ## Convergence Properties
 
@@ -187,7 +187,7 @@ plt.legend()
 
 This example will produce the following output.
 
-![Midpoint convergence](assets/convergence.png)
+![Midpoint convergence](https://raw.githubusercontent.com/electronsandstuff/BeLinear/master/assets/convergence.png)
 
 From this, the higher order convergence of the midpoint method is clear.  The step size can now be selected based off of the trade-off between speed and accuracy.  For many applications, a step size of between 1 um and 10 um will be adequate and provide excellent performance.
 
