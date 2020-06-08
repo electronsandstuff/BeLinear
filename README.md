@@ -43,8 +43,8 @@ import numpy as np
 
 # Compute the fields on axis (replace with your code)
 z   = np.linspace(0, 0.5, 1000)
-Ez = (z_raw<0.005)*10e3/5e-3
-Bz = np.bitwise_and(z_raw > 0.1, z_raw < 0.2) * 6e-3
+Ez = (z<0.005)*10e3/5e-3
+Bz = np.bitwise_and(z > 0.1, z < 0.2) * 6e-3
 
 # Set the solver step size
 h = 5e-6
@@ -83,8 +83,8 @@ import matplotlib.pyplot as plt
 
 # Compute the fields on axis (replace with your code)
 z   = np.linspace(0, 0.5, 1000)
-Ez = (z_raw<0.005)*10e3/5e-3
-Bz = np.bitwise_and(z_raw > 0.1, z_raw < 0.2) * 6e-3
+Ez = (z<0.005)*10e3/5e-3
+Bz = np.bitwise_and(z > 0.1, z < 0.2) * 6e-3
 
 # Set the solver step size
 h = 5e-6
@@ -118,8 +118,8 @@ import matplotlib.pyplot as plt
 
 # Compute the fields on axis (replace with your code)
 z   = np.linspace(0, 0.5, 1000)
-Ez = (z_raw<0.005)*10e3/5e-3
-Bz = np.bitwise_and(z_raw > 0.1, z_raw < 0.2) * 6e-3
+Ez = (z<0.005)*10e3/5e-3
+Bz = np.bitwise_and(z > 0.1, z < 0.2) * 6e-3
 
 # Set the solver step size
 h = 5e-6
@@ -156,8 +156,8 @@ import numpy as np
 
 # Compute the fields on axis (replace with your code)
 z   = np.linspace(0, 0.5, 1000)
-Ez = (z_raw<0.005)*10e3/5e-3
-Bz = np.bitwise_and(z_raw > 0.1, z_raw < 0.2) * 6e-3
+Ez = (z<0.005)*10e3/5e-3
+Bz = np.bitwise_and(z > 0.1, z < 0.2) * 6e-3
 
 # Set the solver step size for our reference matrix
 h_ref = 1e-8
