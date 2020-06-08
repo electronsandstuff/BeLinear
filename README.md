@@ -8,7 +8,7 @@ Performant numerical solutions of the paraxial ray equation.
 Please install the package using pip.
 
 ```
-pip install <unzipped belinear directory>
+pip install belinear
 ```
 
 Once setup the package can be tested using python's unittest framework.
