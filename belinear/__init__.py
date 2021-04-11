@@ -43,7 +43,9 @@ def get_dM_implicit_euler(Ez, Bz, delta_z, gamma_initial=1):
                                                    initial=0)[1:]
     beta = np.sqrt(1-1/gamma**2)
 
-    # Compute the larmor frequency
+    # Compute the larmor frequency (Note: this has terms factored out to save
+    # calculations and isn't quite the real Larmor frequency.  Don't use this
+    # as a reference for other calculations)
     omega_L = (q/2/gamma/m)*Bz[1:]
 
     # Compute the matrix dM = (1-h*M(z))^(-1) where M(z) is the matrix of
@@ -76,7 +78,9 @@ def get_dM_midpoint(Ez, Bz, delta_z, gamma_initial=1):
                                                    initial=0)
     beta = np.sqrt(1-1/gamma**2)
 
-    # Compute the larmor frequency
+    # Compute the larmor frequency (Note: this has terms factored out to save
+    # calculations and isn't quite the real Larmor frequency.  Don't use this
+    # as a reference for other calculations)
     omega_L = (q/2/gamma/m)*Bz
 
     # Transform them all to z+1/2 spacing
